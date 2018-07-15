@@ -1,0 +1,144 @@
+.do {
+    background: url('../img/do/bg/bg__do.jpg') 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.header {
+    padding-top: rem(10px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablets {
+        justify-content: space-between;
+        padding-right: 10%;
+    }
+    @include phones-big {
+        padding-right: 19%;
+    }
+}
+
+.header__logo {
+    width: rem(105px);
+    height: rem(80px);
+    overflow: hidden;
+}
+
+.header__logo__link__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    @include phones {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+.header__menu {
+    display: block;
+    margin-left: auto;
+    @include tablets {
+        display: none;
+    }
+}
+
+.nav {
+    margin-right: rem(15px);
+}
+
+.nav__list {
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    &::after {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        @include circle(rem(5px),
+        #fff);
+        margin: 0 rem(12px);
+    }
+    &:last-child:after {
+        display: none;
+    }
+}
+
+.nav__item__link {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: rem(13px);
+    color: $white;
+}
+
+.do__main {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    @include tablets {
+        flex: 1;
+        justify-content: center;
+        height: 100%;
+        width: 70%;
+        flex-direction: column;
+        align-content: center;
+    }
+}
+
+.burger-image {
+    width: 50%;
+    margin-right: rem(25px);
+    text-align: center;
+    @include tablets {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.burger-image__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    @include tablets {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+.do__description {
+    width: 50%;
+    padding-top: rem(65px);
+    @include tablets {
+        padding-top: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.do__description-text {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    font-family: "LifeHack";
+    font-size: rem(65px);
+    line-height: 1;
+    @include tablets {
+        font-size: rem(52px);
+    }
+    @include phones {
+        font-size: rem(32px);
+    }
+}
+
+.main__arrow-down {
+    margin: 0 auto;
+    @include tablets {
+        margin-bottom: rem(20px);
+    }
+}

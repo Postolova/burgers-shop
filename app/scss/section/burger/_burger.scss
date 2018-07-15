@@ -1,0 +1,351 @@
+.burger {
+    background: linear-gradient(to bottom, #f9b43b 0%, #eb8c38 40%, #eb8c38 60%, #eb8c38 60%, #f9b43b 100%);
+}
+
+// Carousel
+.burger-slider {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 75%;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 rem(10px);
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+    @include phones {
+        height: 95%;
+    }
+}
+
+.slider__btn {
+    position: absolute;
+    font-size: 72px;
+    color: $white;
+    font-weight: lighter;
+    cursor: pointer;
+    top: 30%;
+    z-index: 1;
+    transform: translate(-30%);
+    transition: .3s;
+    &:hover {
+        color: $orange;
+    }
+    @include phones-big {
+        top: 30%;
+        transform: translate(-30%);
+    }
+    @include phones-small {
+        top: 20%;
+        transform: translate(-20%);
+    }
+}
+
+.slider_btn_prev {
+    left: rem(10px);
+    @include phones {
+        left: rem(14px);
+    }
+}
+
+.slider_btn_next {
+    right: -9px;
+    @include phones {
+        right: rem(4px);
+    }
+}
+
+.bottom__dots {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 45%;
+    @include phones {
+        left: 40%;
+        bottom: 5px;
+    }
+}
+
+.bottom__dots-list {
+    display: flex;
+}
+
+.bottom__dots-item {
+    margin-right: rem(10px);
+    width: rem(10px);
+    height: rem(10px);
+    border-radius: 50%;
+    background-color: $orange;
+    transition: .3s;
+    cursor: pointer;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        background-color: darken($orange, 15%);
+    }
+}
+
+.active_dot {
+    background-color: darken($orange, 15%);
+}
+
+.burger__carousel-list {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include phones-big {
+        top: 10%;
+    }
+    @include phones-small {
+        top: 0;
+    }
+    
+}
+
+.burger__carousel {
+    position: relative;
+    right: 0;
+    width: rem(940px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    @include tablets {
+        width: rem(735px);
+        height: 70%;
+        flex-direction: column;
+    }
+    @include phones-big {
+        width: rem(395px);
+    }
+    @include phones {
+        width: 22.5rem;
+    }
+    @include phones-small {
+        width: rem(320px);
+    }
+}
+
+.burger__main__left-side {
+    position: relative;
+    max-width: 50%;
+    height: 100%;
+    @include tablets {
+        height: 100%;
+        width: 70%;
+        align-items: center;
+        text-align: center;
+        margin-right: 0;
+    }
+}
+
+.burger__main__right-side {
+    height: 100%;
+    width: 50%;
+    @include tablets {
+        width: 90%;
+        text-align: center;
+    }
+    @include phones-big {
+        width: 95%;
+    }
+}
+
+.burger__main__left-side__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    @include tablets {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.section_title_burger {
+    color: $white;
+    line-height: 1em;
+    width: 80%;
+    text-align: center;
+    @include tablets {
+        margin: 0 auto;
+    }
+}
+
+.burger__main__left-side__block-img {
+    width: 100%;
+    height: 100%;
+    @include tablets {
+        text-align: center;
+        padding-top: rem(0px);
+    }
+    @include phones {
+        padding-top: rem(20px);
+    }
+}
+
+.burger__main__right-side__description {
+    padding-right: rem(25px);
+    @include tablets {
+        font-size: rem(20px);
+    }
+    @include phones-big {
+        font-size: rem(16px);
+        padding-right: 0;
+    }
+}
+
+.section_title_burger_price {
+    color: #e35028;
+    &::after {
+        content: "рублей";
+        display: inline-block;
+        font-size: rem(30px);
+        margin-left: rem(3px);
+        @include tablets {
+            font-size: rem(26px);
+            margin-right: rem(20px);
+        }
+        font-size: rem(20px);
+        margin-right: 0;
+    }
+}
+
+.btn_link_burger {
+    margin-left: rem(25px);
+    @include tablets {
+        margin-left: 0;
+    }
+}
+
+// End Carousel
+// block ingridients
+.ingridients {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.block__float-ingridients {
+    position: relative;
+    background: rgba(227, 80, 40, 0.4);
+    width: 5.625rem;
+    height: 5.625rem;
+    border-radius: 0.3125rem;
+    padding: rem(13px) rem(23px);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    &:hover {
+        cursor: pointer;
+        background-color: darken($orange, 3%);
+    }
+    @include phones {
+        top: 10%;
+        width: 4.625rem;
+        height: 4.625rem;
+        padding: rem(8px) rem(13px);
+    }
+}
+
+.float-ingridients__list {
+    opacity: 0;
+    transition: opacity .3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -9999px;
+    bottom: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    background: #fff;
+    border-radius: 0.3125rem;
+    width: rem(300px);
+    height: rem(350px);
+    padding: rem(10px) rem(5px) 0 rem(20px);
+    color: #000;
+    overflow: hidden;
+    z-index: 3;
+    text-align: left;
+    transition: opacity .3s;
+    @include phones {
+        width: rem(200px);
+        height: rem(250px);
+        overflow: scroll;
+    }
+}
+
+.float-ingridients-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.float-ingridients-main-text {
+    font-family: 'Gagalin', Arial, Helvetica, sans-serif;
+    font-size: rem(12px);
+    text-align: center;
+    @include phones {
+        font-size: rem(10px);
+    }
+}
+
+.float-ingridients__item {
+    width: 100%;
+    height: 100%;
+    margin-bottom: rem(5px);
+}
+
+.ingridients__img {
+    vertical-align: baseline;
+}
+
+.float-ingridients__kkal-img {
+    width: 60%;
+    height: 60%;
+}
+
+.block__float-ingridients__kkal {
+    display: block;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 5.625rem;
+    height: 5.625rem;
+    text-align: center;
+    z-index: 1;
+    @include tablets {
+        top: 0;
+        left: initial;
+        right: 0;
+        bottom: 0;
+    }
+    @include phones {
+        top: 9.5%;
+        padding: 3px 13px;
+    }
+}
+
+.float-ingridients-main-count {
+    position: absolute;
+    font-family: 'Gagalin', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    top: 52%;
+    transform: translateY(-52%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include phones {
+        font-size: 12px;
+    }
+}

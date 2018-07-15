@@ -1,0 +1,111 @@
+.reviews__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reviews__item {
+    width: 25%;
+    height: 50%;
+    @include tablets {
+        width: 50%;
+        height: 25%;
+    }
+}
+
+.review {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: transparent;
+        transition: .4s;
+    }
+    &:hover:after {
+        background: rgba(20, 20, 20, 0.7);
+    }
+}
+
+.review__photo {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.review__block-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    padding: 15% 10%;
+    transition: .3s;
+    z-index: 10;
+    overflow: hidden;
+    &:hover {
+        opacity: 1;
+    }
+    @include tablets {
+        // height: 100%;
+        text-align: center;
+        overflow: scroll;
+        padding: 3% 10%;
+        line-height: 1.8;
+    }
+    @include phones {
+        top: 70%;
+    }
+}
+
+.review__name {
+    color: #fff;
+    font-family: 'Gagalin', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: rem(16px);
+    @include tablets {
+        font-size: rem(16px);
+        margin-bottom: rem(10px);
+    }
+}
+
+.review__text {
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: rem(14px);
+    @include tablets {
+        font-size: rem(16px);
+    }
+    @include phones {
+        display: none;
+    }
+}
+
+.review__btn__link {
+    display: inline-block;
+    min-width: rem(98px);
+    padding: rem(10px) rem(17px);
+    border-radius: 5px;
+    background-color: $dark;
+    color: #fff;
+    font-size: rem(13px);
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.4s;
+    border: none;
+    &:hover {
+        background-color: darken($dark, 8%);
+    }
+}

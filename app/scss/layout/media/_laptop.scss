@@ -1,0 +1,17 @@
+@media (max-width: $laptop) {
+    .container {
+        width: 750px;
+    }
+    .section__title {
+        font-size: rem(62px);
+    }
+    .do__description-text {
+        font-size: rem(32px);
+    }
+    .menu__accordeon__link__content__text {
+        text-align: center;
+    }
+    .nav-sidebar {
+        display: none;
+    }
+}

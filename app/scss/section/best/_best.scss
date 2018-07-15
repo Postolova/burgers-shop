@@ -1,0 +1,93 @@
+.best {
+    background: url('../img/best/bg/bg__best.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.best-container {
+    padding-top: 4%;
+    @include tablets {
+        padding-top: 0;
+    }
+}
+
+.section_title_best {
+    color: $dark;
+    flex: 1;
+    @include tablets {
+        font-size: rem(62px);
+        margin-bottom: 6%;
+        flex: none;
+    }
+    @include phones {
+        font-size: rem(42px);
+    }
+}
+
+.best__blocks__list {
+    display: flex;
+    align-items: flex-start;
+    flex: 3;
+    @include tablets {
+        flex: none;
+    }
+    @include phones-big {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+.best__blocks__list__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    @include phones-big {
+        flex-direction: row;
+        padding: 2px;
+    }
+}
+
+.best__blocks__block-img {
+    width: rem(100px);
+    height: rem(100px);
+    @include phones {
+        width: rem(70px);
+        height: rem(70px);
+    }
+}
+
+.best__blocks__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    @include tablets {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+.best__blocks__description {
+    width: 80%;
+}
+
+.best__blocks__description__title {
+    font-family: "LifeHack";
+    font-weight: 500;
+    font-size: rem(24px);
+    color: $dark;
+    @include tablets {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.best__blocks__description__text {
+    font-weight: 300;
+    font-size: rem(14px);
+    color: $dark;
+    @include phones-big {
+        font-size: rem(16px);
+    }
+}

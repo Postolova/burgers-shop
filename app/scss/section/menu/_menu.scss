@@ -1,0 +1,111 @@
+.menu {
+  background: url('../img/menu/bg/bg__menu1.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.section_title_menu {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.menu__accordeon__list {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.menu__accordeon__item {
+  display: flex;
+  float: left;
+  height: 100%;
+}
+
+.menu_accordeon_item_active .menu__accordeon__link__content {
+  width: rem(550px);
+  @include phones-big {
+    width: rem(324px);
+  }
+  @include phones {
+    width: rem(285px);
+  }
+  @include phones-small {
+    width: rem(245px);
+  }
+}
+
+.menu_accordeon_item_active .menu__accordeon__link__title {
+  color: $yellow;
+}
+
+.menu__accordeon__link {
+  opacity: 0.93;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: rem(72px);
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-end;
+  float: left;
+  @include phones-big {
+    width: rem(30px);
+  }
+  @include phones {
+    width: rem(30px);
+  }
+  @include phones-small {
+    width: rem(25px);
+  }
+}
+
+.menu__accordeon__link__title {
+  width: 100%;
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: 'Gagalin', cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  margin-bottom: rem(25px);
+  transition: 0.4s;
+  &:hover {
+    color: $yellow;
+  }
+  @include phones {
+    font-size: 1.9rem;
+  }
+}
+
+.menu__accordeon__link__content {
+  width: 0;
+  height: 100%;
+  float: left;
+  background: rgba(47, 50, 52, 0.93);
+  overflow: hidden;
+  transition: width .5s;
+}
+
+.menu__accordeon__link__content__text {
+  font-weight: 300;
+  line-height: 1.8;
+  width: 100%;
+  font-size: rem(16px);
+  padding: rem(40px) rem(20px);
+  @include tablets {
+    font-size: rem(24px);
+  }
+  @include phones-big {
+    font-size: rem(18px);
+  }
+  @include phones {
+    font-size: rem(16px);
+  }
+}

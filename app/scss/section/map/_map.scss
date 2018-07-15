@@ -1,0 +1,23 @@
+.map {
+    width: 100%;
+}
+
+.map__hint {
+    text-align: center;
+    line-height: 4.4;
+    width: rem(300px);
+    height: rem(100px);
+    padding: rem(15px);
+    background-color: #fff;
+    font-size: rem(16px);
+    font-family: 'Gagalin' Arial, Helvetica, sans-serif;
+    color: $dark;
+}
+
+.map__balloon {
+  padding-top: rem(15px);
+  text-align: center;
+  width: rem(200px);
+  height: rem(100px);
+  border-radius: rem(20px);
+}

@@ -1,0 +1,126 @@
+.team {
+    background: url('../img/team/bg/bg__team.jpg') 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.team-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    background: rgba(47, 50, 52, 0.93);
+    padding: 5% 2% 0 7%;
+    @include tablets {
+        left: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+.team__accordeon__list {
+    @include tablets {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.team__accordeon__item {
+    margin-bottom: rem(20px);
+    @include tablets {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.team_accordeon_item_active .team__accordeon__link {
+    color: $yellow;
+    &::before {
+        transform: rotate(180deg)
+    }
+}
+
+.team_accordeon_item_active .team__accordeon__description {
+    display: flex;
+    @include tablets {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.team__accordeon__link {
+    font-family: 'Gagalin';
+    font-weight: 400;
+    font-size: rem(18px);
+    color: $white;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.4s;
+    &:hover {
+        color: $yellow;
+    }
+    &::before {
+        content: "";
+        display: inline-block;
+        margin: 0 rem(15px);
+        vertical-align: middle;
+        border-top: rem(5px) solid $yellow;
+        border-left: rem(5px) solid transparent;
+        border-right: rem(5px) solid transparent;
+        border-bottom: 0px solid transparent;
+        transform: rotate(0deg);
+        transition: .4s;
+        @include tablets {
+            margin-left: 0;
+        }
+    }
+}
+
+.team__accordeon__description {
+    padding: rem(3px) 0;
+    display: none;
+}
+
+.team__accordeon__description__photo {
+    display: block;
+    margin-right: rem(20px);
+    @include tablets {
+        margin-right: 0;
+    }
+}
+
+.team__accordeon__description__img {
+    border-radius: 50%;
+    display: block;
+    width: rem(80px);
+    height: rem(80px);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.team__accordeon__description__text__title {
+    font-weight: 600;
+}
+
+.team__accordeon__description__text__about {
+    font-weight: 300;
+    width: 80%;
+    @include tablets {
+        width: 75%;
+        margin: 0 auto;
+    }
+}

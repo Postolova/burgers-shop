@@ -1,0 +1,322 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.maincontent {
+  width: 100%;
+  height: 100%;
+  min-height: rem(650px);
+  transition: 1.5s;
+  will-change: transform;
+  @include tablets {
+    min-height: initial;
+  }
+  @include phones {
+    min-height: 500px;
+  }
+}
+
+.section {
+  height: 100%;
+  position: relative;
+  min-height: rem(650px);
+  background-color: rgba(0, 0, 0, 0.31);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  @include tablets {
+    min-height: initial;
+  }
+}
+
+.container {
+  width: 95%;
+  height: 100%;
+  max-width: 940px;
+  min-width: rem(320px);
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  @include tablets {
+    min-height: initial;
+    max-width: $tablets;
+    justify-content: center;
+  }
+}
+
+.section__title {
+  font-family: "Gagalin", cursive;
+  color: $yellow;
+  font-size: rem(72px);
+  font-weight: 400;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  @include tablets {
+    font-size: rem(62px);
+    text-align: center;
+    margin-top: 0;
+  }
+  @include phones-big {
+    font-size: rem(42px);
+  }
+}
+
+.btn__link {
+  display: inline-block;
+  min-width: rem(98px);
+  padding: rem(10px) rem(15px);
+  border-radius: rem(5px);
+  background-color: $orange;
+  border-color: $orange;
+  color: #fff;
+  font-size: rem(13px);
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.4s;
+  cursor: pointer;
+  @include phones {
+    min-width: rem(68px);
+  }
+  &:hover {
+    background-color: darken($orange, 8%);
+    border-color: darken($orange, 8%);
+  }
+}
+
+.nav-sidebar {
+  position: fixed;
+  right: 5%;
+  top: 20%;
+  @include tablets {
+    display: none;
+  }
+}
+
+.nav-sidebar__item {
+  margin-bottom: rem(7px);
+  display: list-item;
+}
+
+.nav-sidebar_item_is-active .nav-sidebar__item__link::before {
+  width: rem(15px);
+  height: rem(15px);
+  opacity: 1;
+}
+
+.nav-sidebar__item__link {
+  width: rem(15px);
+  height: rem(15px);
+  display: block;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    content: " ";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    @include absolute;
+    opacity: 0;
+    transition: .4s;
+  }
+  &:after {
+    content: " ";
+    display: block;
+    @include circle(rem(6px), $white);
+    @include absolute;
+  }
+  &:hover:before {
+    width: rem(15px);
+    height: rem(15px);
+    opacity: 1;
+  }
+}
+
+// hamburger sidebar
+.nav-sidebar__mobile {
+  display: none;
+  width: rem(32px);
+  position: fixed;
+  top: 4%;
+  right: 5%;
+  cursor: pointer;
+  @include desktop {
+    display: none;
+  }
+  @include tablets {
+    display: block;
+    top: 4%;
+  }
+  @include phones {
+    top: 6%;
+  }
+}
+
+.mobile__list {
+  display: list-item;
+}
+
+.menu-icons {
+  width: 100%;
+  margin: 2px 0;
+  height: rem(4px);
+}
+
+.mobile__item__link {
+  fill: #fff;
+  &::before {
+    display: list-item;
+    content: '';
+    width: 100%;
+    height: rem(4px);
+    background-image: url('../img/icons/menu-icons/tab_menu.svg');
+    background-repeat: no-repeat;
+  }
+  &::after {
+    display: list-item;
+    content: '';
+    width: 100%;
+    height: rem(4px);
+    background-image: url('../img/icons/menu-icons/tab_menu.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.mobile__transfer__menu {
+  position: fixed;
+  top: -9999px;
+  right: 0;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(47, 50, 52, 0.93);
+  transition: top .5s;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.transfer_logo {
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  @include phones {
+    left: 0;
+  }
+}
+
+.btn__close {
+  position: absolute;
+  width: rem(30px);
+  height: rem(30px);
+  right: 5%;
+  top: 4%;
+  font-size: rem(20px);
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+}
+
+.transfer__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transfer__items {
+  display: list-item;
+  text-align: center;
+  &::after {
+    display: block;
+    text-align: center;
+    content: " ";
+    @include circle(rem(5px),
+    #fff);
+    margin: rem(15px) auto;
+  }
+  &:last-child:after {
+    display: none;
+  }
+}
+
+.transfer_item_link {
+  font-size: rem(46px);
+}
+
+// modal menu
+.reviews__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(47, 50, 52, 0.97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+
+.reviews__overlay-container {
+  position: relative;
+}
+
+.reviews__overlay-content {
+  width: rem(550px);
+  font-size: 16px;
+  border-radius: rem(5px);
+  padding: rem(15px);
+  background-color: #fff;
+  color: $dark;
+  text-align: center;
+  @include tablets {
+    font-size: rem(22px);
+  }
+  ;
+  @include phones {
+    width: rem(250px);
+    overflow: scroll;
+  }
+  ;
+}
+
+.reviews__overlay-close {
+  color: $dark;
+  position: absolute;
+  top: rem(-35px);
+  right: rem(-40px);
+  font-size: rem(26px);
+  text-align: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  @include phones {
+    top: rem(-33px);
+    right: rem(-37px);
+  }
+}
+
+.reviews__overlay-content__name {
+  margin-bottom: rem(20px);
+}
+
+.reviews__overlay-content__discription {
+  line-height: 1.4;
+}
+
+.success {
+  color: #007700;
+}
+
+.error {
+  color: #990000;
+}
